@@ -63,9 +63,9 @@ jobs:
       - name: Upload to App Store
         run: |
           mkdir -p ~/.appstoreconnect/private_keys
-          cat > ~/.appstoreconnect/private_keys/AuthKey_Q5N5KJ7PC8.p8 << 'P8EOF'
+          cat > ~/.appstoreconnect/private_keys/AuthKey_Q5N5KJ7PC8.p8 << 'P8KEYEOF'
 LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JR1RBZ0VBTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEJIa3dkd0lCQVFRZ2FvK3RwcnBpbmtzRElvbTMKYXJISVlQYnh6NXQyaEp3WXIxTlIzckMrNWtXZ0NnWUlLb1pJemowREFRZWhSQU5DQUFRN3ovaDJMNzQrTU1aSgppQkV1SDJlemJ2RG8vZHE3UUtpdU1uSEczVDViWjhUa1RhVW11U0p4ZVZ2TDV4N3ljRGxpMHN5ekVzMEZVVzBsCjhLU1ViZXpzCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0=
-          P8EOF
+P8KEYEOF
           xcrun altool --upload-app \
             -f build/App.ipa -t ios \
             --apiKey "Q5N5KJ7PC8" \
