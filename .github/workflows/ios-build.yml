@@ -61,11 +61,11 @@ jobs:
             -exportOptionsPlist ExportOptions.plist \
             -exportPath $PWD/build
       - name: Upload to App Store
+        env:
+          ASC_KEY_B64: "TFMwdExTMUNSVWRKVGlCUVVrbFdRVlJGSUV0RldTMHRMUzB0Q2sxSlIxUkJaMFZCVFVKTlIwSjVjVWRUVFRRNVFXZEZSME5EY1VkVFRUUTVRWGRGU0VKSWEzZGtkMGxDUVZGUloyRnZLM1J3Y25CcGJtdHpSRWx2YlRNS1lYSklTVmxRWW5oNk5YUXlhRXAzV1hJeFRsSXpja01yTld0WFowTm5XVWxMYjFwSmVtb3dSRUZSWldoU1FVNURRVUZSTjNvdmFESk1OelFyVFUxYVNncHBRa1YxU0RKbGVtSjJSRzh2WkhFM1VVdHBkVTF1U0VjelZEVmlXamhVYTFSaFZXMTFVMHA0WlZaMlREVjROM2xqUkd4cE1ITjVla1Z6TUVaVlZ6QnNDamhMVTFWaVpYcHpDaTB0TFMwdFJVNUVJRkJTU1ZaQlZFVWdTMFZaTFMwdExTMD0="
         run: |
           mkdir -p ~/.appstoreconnect/private_keys
-          cat > ~/.appstoreconnect/private_keys/AuthKey_Q5N5KJ7PC8.p8 << 'P8KEYEOF'
-LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JR1RBZ0VBTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEJIa3dkd0lCQVFRZ2FvK3RwcnBpbmtzRElvbTMKYXJISVlQYnh6NXQyaEp3WXIxTlIzckMrNWtXZ0NnWUlLb1pJemowREFRZWhSQU5DQUFRN3ovaDJMNzQrTU1aSgppQkV1SDJlemJ2RG8vZHE3UUtpdU1uSEczVDViWjhUa1RhVW11U0p4ZVZ2TDV4N3ljRGxpMHN5ekVzMEZVVzBsCjhLU1ViZXpzCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0=
-P8KEYEOF
+          echo "$ASC_KEY_B64" | base64 --decode > ~/.appstoreconnect/private_keys/AuthKey_Q5N5KJ7PC8.p8
           xcrun altool --upload-app \
             -f build/App.ipa -t ios \
             --apiKey "Q5N5KJ7PC8" \
