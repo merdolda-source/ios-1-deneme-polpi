@@ -21,7 +21,7 @@ jobs:
       - name: Capacitor sync
         run: |
           chmod -R 777 node_modules/.bin/
-          npx cap sync ios
+          npx cap copy ios
       - name: CocoaPods
         run: |
           cd ios/App
