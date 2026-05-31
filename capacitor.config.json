@@ -1,0 +1,9 @@
+{
+    "appId": "deneme.polpi",
+    "appName": "sari taks\u0131 cizre",
+    "webDir": "www",
+    "server": {
+        "url": "https://cizretaksisari.com/",
+        "cleartext": true
+    }
+}
