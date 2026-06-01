@@ -18,10 +18,11 @@ jobs:
         run: |
           mkdir -p www
           echo '<html><body></body></html>' > www/index.html
-      - name: Capacitor copy
+      - name: Web assets kopyala
         run: |
-          chmod -R 777 node_modules/.bin/
-          npx cap copy ios
+          mkdir -p ios/App/App/public
+          cp -r www/* ios/App/App/public/
+          cp capacitor.config.json ios/App/App/capacitor.config.json 2>/dev/null || true
       - name: CocoaPods
         run: |
           cd ios/App
