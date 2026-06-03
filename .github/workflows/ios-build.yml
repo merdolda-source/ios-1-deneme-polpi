@@ -65,6 +65,11 @@ jobs:
             -archivePath $PWD/build/App.xcarchive \
             -exportOptionsPlist ExportOptions.plist \
             -exportPath $PWD/build
+      - name: IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: App.ipa
+          path: build/App.ipa
       - name: Upload to App Store
         env:
           ASC_KEY_B64: 'TFMwdExTMUNSVWRKVGlCUVVrbFdRVlJGSUV0RldTMHRMUzB0Q2sxSlIxUkJaMFZCVFVKTlIwSjVjVWRUVFRRNVFXZEZSME5EY1VkVFRUUTVRWGRGU0VKSWEzZGtkMGxDUVZGUloyRnZLM1J3Y25CcGJtdHpSRWx2YlRNS1lYSklTVmxRWW5oNk5YUXlhRXAzV1hJeFRsSXpja01yTld0WFowTm5XVWxMYjFwSmVtb3dSRUZSWldoU1FVNURRVUZSTjNvdmFESk1OelFyVFUxYVNncHBRa1YxU0RKbGVtSjJSRzh2WkhFM1VVdHBkVTF1U0VjelZEVmlXamhVYTFSaFZXMTFVMHA0WlZaMlREVjROM2xqUkd4cE1ITjVla1Z6TUVaVlZ6QnNDamhMVTFWaVpYcHpDaTB0TFMwdFJVNUVJRkJTU1ZaQlZFVWdTMFZaTFMwdExTMD0='
